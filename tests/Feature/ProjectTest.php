@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
+use App\Project;
 
 class ProjectTest extends TestCase
 {
@@ -13,7 +14,7 @@ class ProjectTest extends TestCase
 
     public function test_only_authenticated_users_can_create_a_project()
     {
-        $attributes = factory('App\Project')->raw();
+        $attributes = factory(Project::class)->raw();
 
         $this->post('/projects', $attributes)->assertRedirect('login');
     }
@@ -40,7 +41,7 @@ class ProjectTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $project = factory('App\Project')->create();
+        $project = factory(Project::class)->create();
 
         $this->get($project->path())
             ->assertSee($project->title)
@@ -50,14 +51,14 @@ class ProjectTest extends TestCase
     public function test_a_project_requires_a_title()
     {
         $this->actingAs(factory(User::class)->create());
-        $attributes = factory('App\Project')->raw(['title' => '']);
+        $attributes = factory(Project::class)->raw(['title' => '']);
         $this->post('/projects', $attributes)->assertSessionHasErrors('title');
     }
 
     public function test_a_project_requires_a_description()
     {
         $this->actingAs(factory(User::class)->create());
-        $attributes = factory('App\Project')->raw(['description' => '']);
+        $attributes = factory(Project::class)->raw(['description' => '']);
         $this->post('/projects', $attributes)->assertSessionHasErrors('description');
     }
 }
