@@ -26,6 +26,7 @@ class ProjectTest extends TestCase
      */
     public function test_a_user_can_create_a_project()
     {
+        $this->withoutExceptionHandling();
         $this->actingAs(factory(User::class)->create());
         $attributes = [
             'title' => $this->faker->sentence,
