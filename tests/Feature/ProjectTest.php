@@ -61,7 +61,7 @@ class ProjectTest extends TestCase
             ->assertSee($project->description);
     }
 
-    public function test_an_authenticated_user_cannot_see_rhs_projects_of_others()
+    public function test_an_authenticated_user_cannot_see_the_projects_of_others()
     {
         $this->be(factory(User::class)->create());
         // $this->withoutExceptionHandling();
