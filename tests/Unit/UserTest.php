@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\User;
 use Illuminate\Database\Eloquent\Collection;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -18,7 +19,7 @@ class UserTest extends TestCase
      */
     public function test_has_projects()
     {
-        $user = factory('App\User')->create();
+        $user = factory(User::class)->create();
 
         $this->assertInstanceOf(Collection::class, $user->projects);
     }
