@@ -11,17 +11,19 @@ class ProjectsController extends Controller
     {
         return view('projects.index', [
             'projects' => auth()->user()->projects
-        ]); 
+        ]);
     }
 
     public function store()
     {
-        auth()->user()->projects()->create(request()->validate([
-            'title' => 'required', 
+        $attributes = request()->validate([
+            'title' => 'required',
             'description' => 'required'
-        ]));
+        ]);
 
-        return redirect('/projects');
+        $project = auth()->user()->projects()->create($attributes);
+
+        return redirect($project->path());
     }
 
     public function create()
@@ -31,7 +33,7 @@ class ProjectsController extends Controller
 
     public function show(Project $project)
     {
-        if (auth()->user()->isNot ($project->owner)) {
+        if (auth()->user()->isNot($project->owner)) {
             abort(403);
         }
 
