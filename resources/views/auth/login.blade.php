@@ -10,7 +10,7 @@
                 <label class="block mb-2" for="email">{{ __('E-Mail Address') }}</label>
                 <div class="mb-8">
                     <input id="email" type="email"
-                           class="input shadow appearance-none border rounded w-full py-2 px-3 @error('email') text-red @enderror"
+                           class="input appearance-none border rounded w-full py-2 px-3 @error('email') text-red @enderror"
                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
                     <div class="mt-1">
@@ -25,7 +25,7 @@
                        class="block mb-2">{{ __('Password') }}</label>
                 <div>
                     <input id="password" type="password"
-                           class="input shadow appearance-none border rounded w-full py-2 px-3 @error('password') text-red @enderror"
+                           class="input appearance-none border rounded w-full py-2 px-3 @error('password') text-red @enderror"
                            name="password" required autocomplete="current-password">
                     @error('password')
                     <div class="mt-1">

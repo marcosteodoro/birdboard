@@ -7,26 +7,12 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-{{--            <div>--}}
-{{--                <label class="block mb-2" for="email">{{ __('E-Mail Address') }}</label>--}}
-{{--                <div class="mb-8">--}}
-{{--                    <input id="email" type="email"--}}
-{{--                           class="input shadow appearance-none border rounded w-full py-2 px-3 @error('email') text-red @enderror"--}}
-{{--                           name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>--}}
-{{--                    @error('email')--}}
-{{--                    <div class="mt-1">--}}
-{{--                        <span class="text-red text-xs italic mt-24">{{ $message }}</span>--}}
-{{--                    </div>--}}
-{{--                    @enderror--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
             <div>
                 <label for="name" class="block mb-2">{{ __('Name') }}</label>
 
                 <div class="mb-8">
                     <input id="name" type="text"
-                           class="input shadow appearance-none border rounded w-full py-2 px-3 @error('name') is-invalid @enderror" name="name"
+                           class="input appearance-none border rounded w-full py-2 px-3 @error('name') is-invalid @enderror" name="name"
                            value="{{ old('name') }}" required autocomplete="name" autofocus>
                     @error('name')
                     <div class="mt-1">
@@ -41,7 +27,7 @@
 
                 <div class="mb-8">
                     <input id="email" type="email"
-                           class="input shadow appearance-none border rounded w-full py-2 px-3 @error('email') is-invalid @enderror"
+                           class="input appearance-none border rounded w-full py-2 px-3 @error('email') is-invalid @enderror"
                            name="email" value="{{ old('email') }}" required autocomplete="email">
 
                     @error('email')
@@ -57,7 +43,7 @@
 
                 <div class="mb-8">
                     <input id="password" type="password"
-                           class="input shadow appearance-none border rounded w-full py-2 px-3 @error('password') is-invalid @enderror"
+                           class="input appearance-none border rounded w-full py-2 px-3 @error('password') is-invalid @enderror"
                            name="password" required autocomplete="new-password">
                     @error('password')
                     <div class="mt-1">
@@ -72,7 +58,7 @@
 
                 <div class="mb-8">
                     <input id="password-confirm" type="password"
-                           class="input shadow appearance-none border rounded w-full py-2 px-3" name="password_confirmation"
+                           class="input appearance-none border rounded w-full py-2 px-3" name="password_confirmation"
                            required autocomplete="new-password">
                 </div>
             </div>
