@@ -51,6 +51,45 @@
      @apply .bg-white .p-5 .rounded-lg .shadow;
  }
 
+ .form-area {
+     @apply .bg-white .rounded-lg .p-8 .mx-auto .shadow-md;
+
+     @screen lg {
+         @apply .px-20 w-2/3;
+     }
+
+     .heading {
+         @apply .font-normal .text-center .mb-8;
+     }
+
+     .field {
+         @apply .mb-8;
+     }
+
+     input:not([type='checkbox']) {
+         @apply .border .border-grey .shadow .appearance-none .rounded .w-full .py-2 .px-3;
+     }
+
+     .input.checkbox {
+         @apply .mr-2 .leading-tight;
+     }
+
+     .input.textarea {
+         @apply .w-full .mb-4 .shadow .border .border-grey .rounded;
+         min-height: 200px;
+     }
+
+     .input-error {
+         @apply .text-red .text-xs .italic .mt-24;
+     }
+
+     .label {
+         @apply .block .mb-2;
+     }
+ }
+
+
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
