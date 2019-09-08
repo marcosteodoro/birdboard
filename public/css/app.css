@@ -649,6 +649,10 @@ table {
   min-height: 200px;
 }
 
+.form-area .input.textarea.is-invalid {
+  color: #e3342f;
+}
+
 .form-area .input-error {
   color: #e3342f;
   font-size: .75rem;

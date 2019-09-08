@@ -79,6 +79,10 @@
          min-height: 200px;
      }
 
+     .input.textarea.is-invalid {
+         @apply .text-red;
+     }
+
      .input-error {
          @apply .text-red .text-xs .italic .mt-24;
      }
