@@ -19,6 +19,7 @@ class ManageProjectTest extends TestCase
 
         $this->get('/projects')->assertRedirect('login');
         $this->get('/projects/create')->assertRedirect('login');
+        $this->get($project->path() . '/edit')->assertRedirect('login');
         $this->get($project->path())->assertRedirect('login');
         $this->post('/projects', $project->toArray())->assertRedirect('login');
     }
@@ -53,12 +54,14 @@ class ManageProjectTest extends TestCase
 
     public function test_a_user_can_update_a_project()
     {
+        $this->withoutExceptionHandling();
         $project = ProjectFactory::create();
 
         $this->actingAs($project->owner)
-            ->patch($project->path(), $attributes = ['notes' => 'changed'])
+            ->patch($project->path(), $attributes = ['title' => 'Changed', 'description' => 'changed', 'notes' => 'changed'])
             ->assertRedirect($project->path());
 
+        $this->get($project->path() . '/edit')->assertOk();
         $this->assertDatabaseHas('projects', $attributes);
     }
 
