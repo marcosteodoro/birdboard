@@ -54,7 +54,6 @@ class ManageProjectTest extends TestCase
 
     public function test_a_user_can_update_a_project()
     {
-        $this->withoutExceptionHandling();
         $project = ProjectFactory::create();
 
         $this->actingAs($project->owner)
@@ -73,6 +72,16 @@ class ManageProjectTest extends TestCase
             ->get($project->path())
             ->assertSee($project->title)
             ->assertSee(str_limit($project->description));
+    }
+
+    public function test_a_user_can_update_a_project_general_notes()
+    {
+        $project = ProjectFactory::create();
+
+        $this->actingAs($project->owner)
+            ->patch($project->path(), $attributes = ['notes' => 'changed']);
+
+        $this->assertDatabaseHas('projects', $attributes);
     }
 
     public function test_an_authenticated_user_cannot_see_the_projects_of_others()
