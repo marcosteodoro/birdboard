@@ -16,7 +16,7 @@
 
                 <img
                     src="{{ gravatar_url($project->owner->email) }}"
-                    alt="{{ $member->name }}'s avatar"
+                    alt="{{ $project->owner->name }}'s avatar"
                     class="rounded-full w-8 mr-2">
                 <a href="{{ $project->path() . '/edit'}}" class="button ml-4">Edit Project</a>
             </div>
