@@ -59,9 +59,11 @@
 
                     @if ($errors->any())
                         <div class="field mt-6">
-                            @foreach($errors->all() as $error)
-                                <li class="text-sm text-red">{{ $error }}</li>
-                            @endforeach
+                            <ul class="field mt-6 list-reset">
+                                @foreach($errors->all() as $error)
+                                    <li class="text-sm text-red">{{ $error }}</li>
+                                @endforeach
+                            </ul>
                         </div>
                     @endif
                 </div>
@@ -69,6 +71,10 @@
             <div class="lg:w-1/4 px-3 lg:py-8">
                 @include('projects.card')
                 @include('projects.activity.card')
+
+                @can('manage', $project)
+                    @include('projects.invite')
+                @endcan
             </div>
         </div>
     </main>
