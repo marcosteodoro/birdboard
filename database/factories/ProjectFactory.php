@@ -8,7 +8,8 @@ use Faker\Generator as Faker;
 $factory->define(Project::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
-        'description' => $faker->paragraph,
+        'description' => str_limit($faker->paragraph, 100),
+        'notes' => 'Foobar notes',
         'owner_id' => factory(App\User::class)
     ];
 });
