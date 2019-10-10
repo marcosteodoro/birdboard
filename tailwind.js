@@ -44,6 +44,7 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   'transparent': 'transparent',
 
+  default: 'var(--text-default-color)',
   'black': '#22292f',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
@@ -354,7 +355,12 @@ module.exports = {
   |
   */
 
-  backgroundColors: colors,
+  backgroundColors: {
+      page: 'var(--page-background-color)',
+      card: 'var(--card-background-color)',
+      button: 'var(--button-background-color)',
+      header: 'var(--header-background-color)',
+  },
 
   /*
   |-----------------------------------------------------------------------------
