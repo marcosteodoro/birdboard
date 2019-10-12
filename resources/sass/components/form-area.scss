@@ -1,0 +1,40 @@
+.form-area {
+    @apply .bg-card .rounded-lg .p-8 .mx-auto .shadow-md;
+
+    @screen lg {
+        @apply .px-20 w-2/3;
+    }
+
+    .heading {
+        @apply .font-normal .text-center .mb-8;
+    }
+
+    .field {
+        @apply .mb-8;
+    }
+
+    input:not([type='checkbox']) {
+        @apply .border .border-grey .shadow .appearance-none .rounded .w-full .py-2 .px-3;
+    }
+
+    .input.checkbox {
+        @apply .mr-2 .leading-tight;
+    }
+
+    .input.textarea {
+        @apply .w-full .mb-4 .shadow .border .border-grey .rounded;
+        min-height: 200px;
+    }
+
+    .input.textarea.is-invalid {
+        @apply .text-red;
+    }
+
+    .input-error {
+        @apply .text-red .text-xs .italic .mt-24;
+    }
+
+    .label {
+        @apply .block .mb-2;
+    }
+}
