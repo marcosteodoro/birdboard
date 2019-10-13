@@ -14,7 +14,7 @@
     }
 
     input:not([type='checkbox']) {
-        @apply .border .border-grey .shadow .appearance-none .rounded .w-full .py-2 .px-3;
+        @apply .border .border-muted .shadow .appearance-none .rounded .w-full .py-2 .px-3;
     }
 
     .input.checkbox {
@@ -22,16 +22,16 @@
     }
 
     .input.textarea {
-        @apply .w-full .mb-4 .shadow .border .border-grey .rounded;
+        @apply .w-full .mb-4 .shadow .border .border-muted .rounded;
         min-height: 200px;
     }
 
     .input.textarea.is-invalid {
-        @apply .text-red;
+        @apply .text-error;
     }
 
     .input-error {
-        @apply .text-red .text-xs .italic .mt-24;
+        @apply .text-error .text-xs .italic .mt-24;
     }
 
     .label {

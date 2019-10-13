@@ -19,11 +19,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="theme-light bg-page">
+<body class="theme-dark bg-page">
     <div id="app">
         <nav class="bg-header">
             <div class="container mx-auto">
-                <div class="flex justify-between items-center py-2">
+                <div class="flex justify-between items-center py-2 section">
                     <h1>
                         <a class="navbar-brand" href="{{ url('/') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="291" height="45" viewBox="0 0 291 45" style="top: 2px" class="text-default">
@@ -43,7 +43,7 @@
 
                     <div>
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto list-reset">
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
@@ -56,21 +56,10 @@
                                 @endif
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    <a class="flex items-center text-default no-underline text-sm" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <img width="35" class="rounded-full mr-3" src={{ gravatar_url(auth()->user()->email) }}"" alt="">
+                                        {{ auth()->user()->name }}
                                     </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </div>
                                 </li>
                             @endguest
                         </ul>
@@ -79,7 +68,7 @@
             </div>
         </nav>
 
-        <main class="container mx-auto py-4">
+        <main class="container mx-auto py-4 section">
             @yield('content')
         </main>
     </div>
