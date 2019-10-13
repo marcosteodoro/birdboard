@@ -519,6 +519,7 @@ table {
   --text-muted-color: rgba(0, 0, 0, .3);
   --text-muted-light-color: rgba(255, 255, 255, .1);
   --text-muted-light-color: #e1e6e8;
+  --text-error-color: red;
 }
 
 .theme-dark {
@@ -544,6 +545,13 @@ table {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   color: white;
+}
+
+.button.is-outlined {
+  background-color: var(--card-background-color);
+  border-width: 1px;
+  border-color: var(--text-accent-color);
+  color: var(--text-accent-color);
 }
 
 .theme-light .button {

@@ -9,7 +9,7 @@
             <div>
                 <label class="label" for="email">{{ __('E-Mail Address') }}</label>
                 <div class="field">
-                    <input id="email" type="email" class="input @error('email') text-red @enderror"
+                    <input id="email" type="email" class="input @error('email') text-error @enderror"
                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
                     <div class="mt-1">
@@ -23,7 +23,7 @@
                 <label for="password"
                        class="label">{{ __('Password') }}</label>
                 <div>
-                    <input id="password" type="password" class="input @error('password') text-red @enderror"
+                    <input id="password" type="password" class="input @error('password') text-error @enderror"
                            name="password" required autocomplete="current-password">
                     @error('password')
                     <div class="mt-1">
