@@ -53,7 +53,7 @@
                     <form action="{{ $project->path() }}" method="POST">
                         @method('PATCH')
                         @csrf
-                        <textarea class="card w-full mb-4" style="min-height: 200px;"placeholder="Anything special hat you want to make a note of?" name="notes">{{ $project->notes }}</textarea>
+                        <textarea class="card w-full mb-4 text-default" style="min-height: 200px;"placeholder="Anything special hat you want to make a note of?" name="notes">{{ $project->notes }}</textarea>
                         <button type="submit" class="button">Save</button>
                     </form>
 
@@ -61,7 +61,7 @@
                         <div class="field mt-6">
                             <ul class="field mt-6 list-reset">
                                 @foreach($errors->all() as $error)
-                                    <li class="text-sm text-red">{{ $error }}</li>
+                                    <li class="text-sm text-error">{{ $error }}</li>
                                 @endforeach
                             </ul>
                         </div>
