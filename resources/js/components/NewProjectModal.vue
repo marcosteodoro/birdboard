@@ -32,11 +32,11 @@
                             class="border border-muted-light py-2 px-2 mb-4 text-xs block w-full rounded"
                             placeholder="Task 1"
                             v-for="task in form.tasks"
-                            v-model="task.value"
+                            v-model="task.body"
                         >
                     </div>
 
-                    <button class="inline-flex items-center text-xs" @click="addTask">
+                    <button type="button" class="inline-flex items-center text-xs" @click="addTask">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="mr-2">
                             <g fill="none" fill-rule="evenodd" opacity=".307">
                                 <path stroke="#000" stroke-opacity=".012" stroke-width="0" d="M-3-3h24v24H-3z"></path>
@@ -51,7 +51,7 @@
             </div>
 
             <footer class="flex justify-end">
-                <button class="button is-outlined mr-4" @click="$modal.hide('new-project')">Cancel</button>
+                <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-project')">Cancel</button>
                 <button class="button">Create Project</button>
             </footer>
         </form>
@@ -66,7 +66,7 @@
                     title: '',
                     description: '',
                     tasks: [
-                        {value: ''}
+                        { body: '' }
                     ]
                 },
                 errors: {
